@@ -2,10 +2,33 @@
 <html lang="no">
 <head>
   <meta charset="UTF-8">
-  <title>Skus.no</title>
+  <title>SKUS – Challenge</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#111; color:#eee; text-align:center; padding-top:100px; }
+    input { padding:8px; margin:5px; }
+    button { padding:8px 16px; }
+  </style>
 </head>
 <body>
-  <h1>Skus.no</h1>
-  <p>Nettsiden er under arbeid.</p>
+  <h1>SKUS – Challenge Level 1</h1>
+  <p>Skriv inn passord for å gå videre.</p>
+  <form onsubmit="return checkPass(event)">
+    <input type="password" id="pw" placeholder="Passord">
+    <button type="submit">Lås opp</button>
+  </form>
+
+  <script>
+    // Hint til ham: Alt i nettleseren kan inspiseres...
+    function checkPass(e) {
+      e.preventDefault();
+      const pw = document.getElementById('pw').value;
+      const riktig = "byggOgHjem2025"; // Kan finnes ved å se på koden
+      if (pw === riktig) {
+        window.location = "velkommen.html";
+      } else {
+        alert("Feil passord. Prøv igjen.");
+      }
+    }
+  </script>
 </body>
 </html>
